@@ -1,0 +1,18 @@
+{
+  "name": "wemove-test",
+  "version": "0.0.1",
+  "description": "test user interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tttp/wemove-test.git"
+  },
+  "author": "Xavier Dutoit <node@tttp.eu> (http://www.techtothepeople.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tttp/wemove-test/issues"
+  }
+}
