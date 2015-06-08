@@ -34,12 +34,13 @@ module.exports = function(config) {
       'bower_components/angular-ui-utils/ui-utils.js',
       'bower_components/angular-unsavedChanges/dist/unsavedChanges.js',
       'tests/karma/modules.js',
+      '../../../../misc/drupal.js',
       'js/crm.ajax.js',
       'ang/*.js',
       'ang/**/*.js',
       'tests/karma/lib/*.js',
       'tests/karma/**/*.js',
-      'ang/**/*.html'      
+      'ang/**/*.html'
     ],
     preprocessors : {
       'ang/**/*.html' : ['ng-html2js']
