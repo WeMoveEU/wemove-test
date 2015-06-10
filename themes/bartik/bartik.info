@@ -6,7 +6,7 @@ version = VERSION
 core = 7.x
 
 scripts[] = js/alephbet.js
-scripts[] = js/test1.js
+scripts[] = js/test2.js
 
 stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/style.css
