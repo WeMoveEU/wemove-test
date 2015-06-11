@@ -39,16 +39,16 @@
 jQuery(document).ready(function($) {
 
   var header_experiment = new AlephBet.Experiment({
-    name: 'h1 text experiment-2', 
-    namespace: 'wemove-home-page-2',
+    name: 'h1 text experiment-3', 
+    namespace: 'wemove-home-page-3',
     variants: {  
-      'h1 text experiment-2 subscribe': {
+      'h1 text experiment subscribe-3': {
         activate: function() {
           jQuery('#node-16 h2 a').text('Subscribe to our Newsletter');
           jQuery('#node-16 h2').attr('title', 'Click here to be rich!');
         }
       },
-      'h1 text experiment-2 join us': {
+      'h1 text experiment join us-3': {
         activate: function() {
           jQuery('#node-16 h2 a').text('Join us and move Europe!');
           jQuery('#node-16 h2').attr('title', 'Click here to be rich even more!!!');
@@ -57,16 +57,8 @@ jQuery(document).ready(function($) {
     },
   });
 
-  // creating a goal
-  var h1_clicked_goal = new AlephBet.Goal('Clicked', {unique: false});
-  
-  jQuery('#node-16 h2').click(function() {
-    // The chosen variant will be tied to the goal automatically
-    h1_clicked_goal.complete();
-  });
-  
-  // adding experiment to the goal
-  h1_clicked_goal.add_experiment(header_experiment);
+  // tracking non-unique goals, e.g. page views
+  var page_views = new AlephBet.Goal('wemove-home-page-3 view', {unique: false});
 
 });
 </script>

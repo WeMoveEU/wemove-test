@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
   //localStorage.clear(); 
-  //AlephBet.options.debug = true;
+  AlephBet.options.debug = true;
 
   var h1_experiment = new AlephBet.Experiment({
     name: 'h1 text', 
@@ -62,9 +62,5 @@ jQuery(document).ready(function($) {
   }
 
   console.log('Namespace:' + h1_experiment.options.namespace);
-
-
-  // tracking non-unique goals, e.g. page views
-  var page_views = new AlephBet.Goal('index-goal-page view', {unique: false});
 
 });
