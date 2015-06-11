@@ -1,9 +1,11 @@
 jQuery(document).ready(function($) {
 
   //localStorage.clear(); 
+  //AlephBet.options.debug = true;
 
   var h1_experiment = new AlephBet.Experiment({
     name: 'h1 text', 
+    namespace: 'index-goal-page',
     trigger: function() {
       return window.location.href.match(/index-goal.html/);
     },
@@ -51,12 +53,18 @@ jQuery(document).ready(function($) {
 
   
   for (var i in goals) {
-    if (h1_experiment.storage().get(h1_experiment.options.name + ":" + goals[i].name) == true) {
+    if (h1_experiment.storage().get(h1_experiment.options.namespace, h1_experiment.options.name + ":" + goals[i].name) == true) {
       console.log('Goal achieved: ' + goals[i].name + '! :-)');
       messageDiv.append('<p>Goal achieved: '+goals[i].name+'</p>');
     } else {
       console.log('Goal NOT achieved: ' + goals[i].name + ' :-(');
     }
   }
+
+  console.log('Namespace:' + h1_experiment.options.namespace);
+
+
+  // tracking non-unique goals, e.g. page views
+  var page_views = new AlephBet.Goal('index-goal-page view', {unique: false});
 
 });

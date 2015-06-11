@@ -40,6 +40,7 @@ jQuery(document).ready(function($) {
 
   var header_experiment = new AlephBet.Experiment({
     name: 'h1 text', 
+    namespace: 'wemove-home-page',
     variants: {  
       text1: {
         activate: function() {
@@ -61,12 +62,14 @@ jQuery(document).ready(function($) {
   
   jQuery('#node-16 h2').click(function() {
     // The chosen variant will be tied to the goal automatically
-    console.log('clicked header');
     h1_clicked_goal.complete();
   });
   
   // adding experiment to the goal
   h1_clicked_goal.add_experiment(header_experiment);
+
+  // tracking non-unique goals, e.g. page views
+  var page_views = new AlephBet.Goal('wemove-home-page view', {unique: false});
 
 });
 </script>
